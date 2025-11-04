@@ -1,0 +1,166 @@
+log_id,template_id,score,raw_log
+32834,301,10.230252,"Jan  5 07:59:03 LabSZ sshd[16140]: Bad protocol version identification 'CONNECT xui.ptlogin2.qq.com:443 HTTP/1.1' from 113.96.223.207 port 45014"
+35344,176,10.230252,"Jan  5 09:47:34 LabSZ sshd[17423]: error: Received disconnect from 195.154.45.62: 3: com.jcraft.jsch.JSchException: timeout in waiting for rekeying process. [preauth]"
+45159,178,10.230252,"Jan  6 09:14:28 LabSZ sshd[22786]: Bad protocol version identification 'SSH-2.0' from 79.177.77.24 port 63599"
+45841,10,10.230252,"Jan  6 12:52:23 LabSZ sshd[22942]: syslogin_perform_logout: logout() returned an error"
+50118,15,10.230252,"Jan  7 02:17:54 LabSZ sshd[26945]: Invalid user utsims from 124.68.10.20"
+50119,90,10.230252,"Jan  7 02:17:54 LabSZ sshd[26945]: input_userauth_request: invalid user utsims [preauth]"
+50122,191,10.230252,"Jan  7 02:17:56 LabSZ sshd[26945]: Failed password for invalid user utsims from 124.68.10.20 port 43944 ssh2"
+50145,183,10.230252,"Jan  7 02:25:50 LabSZ sshd[26959]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=host-92-28-234-81.as13285.net  user=root"
+50149,181,10.230252,"Jan  7 02:26:09 LabSZ sshd[26959]: PAM 5 more authentication failures; logname= uid=0 euid=0 tty=ssh ruser= rhost=host-92-28-234-81.as13285.net  user=root"
+50151,164,10.230252,"Jan  7 02:32:27 LabSZ sshd[26961]: reverse mapping checking getaddrinfo for 178.161.237.181.dyn.v4.saturn-internet.ru [178.161.237.181] failed - POSSIBLE BREAK-IN ATTEMPT!"
+50555,1,10.230252,"Jan  7 05:03:05 LabSZ sshd[27169]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=s0106802aa8cd93bf.vn.shawcable.net  user=root"
+52296,198,10.230252,"Jan  7 08:07:21 LabSZ sshd[27862]: Failed password for invalid user telnet from 212.237.45.42 port 39748 ssh2"
+52645,25,10.230252,"Jan  7 10:28:47 LabSZ sshd[28193]: Invalid user admln from 118.186.36.50"
+52646,100,10.230252,"Jan  7 10:28:47 LabSZ sshd[28193]: input_userauth_request: invalid user admln [preauth]"
+52649,202,10.230252,"Jan  7 10:28:49 LabSZ sshd[28193]: Failed password for invalid user admln from 118.186.36.50 port 33575 ssh2"
+52681,28,10.230252,"Jan  7 10:29:10 LabSZ sshd[28205]: Invalid user alan from 118.186.36.50"
+52682,103,10.230252,"Jan  7 10:29:10 LabSZ sshd[28205]: input_userauth_request: invalid user alan [preauth]"
+52685,205,10.230252,"Jan  7 10:29:12 LabSZ sshd[28205]: Failed password for invalid user alan from 118.186.36.50 port 46764 ssh2"
+52687,29,10.230252,"Jan  7 10:29:19 LabSZ sshd[28207]: Invalid user alice from 118.186.36.50"
+52688,104,10.230252,"Jan  7 10:29:19 LabSZ sshd[28207]: input_userauth_request: invalid user alice [preauth]"
+52691,206,10.230252,"Jan  7 10:29:21 LabSZ sshd[28207]: Failed password for invalid user alice from 118.186.36.50 port 47443 ssh2"
+52693,30,10.230252,"Jan  7 10:29:21 LabSZ sshd[28209]: Invalid user ami from 118.186.36.50"
+52694,105,10.230252,"Jan  7 10:29:21 LabSZ sshd[28209]: input_userauth_request: invalid user ami [preauth]"
+52697,207,10.230252,"Jan  7 10:29:24 LabSZ sshd[28209]: Failed password for invalid user ami from 118.186.36.50 port 52178 ssh2"
+52699,31,10.230252,"Jan  7 10:29:27 LabSZ sshd[28211]: Invalid user bacula from 118.186.36.50"
+52700,106,10.230252,"Jan  7 10:29:27 LabSZ sshd[28211]: input_userauth_request: invalid user bacula [preauth]"
+52703,208,10.230252,"Jan  7 10:29:29 LabSZ sshd[28211]: Failed password for invalid user bacula from 118.186.36.50 port 53457 ssh2"
+52705,32,10.230252,"Jan  7 10:29:30 LabSZ sshd[28213]: Invalid user bash_spm from 118.186.36.50"
+52706,107,10.230252,"Jan  7 10:29:30 LabSZ sshd[28213]: input_userauth_request: invalid user bash_spm [preauth]"
+52709,209,10.230252,"Jan  7 10:29:32 LabSZ sshd[28213]: Failed password for invalid user bash_spm from 118.186.36.50 port 56056 ssh2"
+52711,33,10.230252,"Jan  7 10:29:35 LabSZ sshd[28215]: Invalid user bichongxing from 118.186.36.50"
+52712,108,10.230252,"Jan  7 10:29:35 LabSZ sshd[28215]: input_userauth_request: invalid user bichongxing [preauth]"
+52716,210,10.230252,"Jan  7 10:29:36 LabSZ sshd[28215]: Failed password for invalid user bichongxing from 118.186.36.50 port 57361 ssh2"
+52720,34,10.230252,"Jan  7 10:29:40 LabSZ sshd[28219]: Invalid user bjbnet from 118.186.36.50"
+52721,109,10.230252,"Jan  7 10:29:40 LabSZ sshd[28219]: input_userauth_request: invalid user bjbnet [preauth]"
+52725,211,10.230252,"Jan  7 10:29:41 LabSZ sshd[28219]: Failed password for invalid user bjbnet from 118.186.36.50 port 59660 ssh2"
+52727,35,10.230252,"Jan  7 10:29:42 LabSZ sshd[28223]: Invalid user bmuuser from 118.186.36.50"
+52728,110,10.230252,"Jan  7 10:29:42 LabSZ sshd[28223]: input_userauth_request: invalid user bmuuser [preauth]"
+52733,212,10.230252,"Jan  7 10:29:44 LabSZ sshd[28223]: Failed password for invalid user bmuuser from 118.186.36.50 port 33319 ssh2"
+52735,36,10.230252,"Jan  7 10:29:45 LabSZ sshd[28225]: Invalid user bocosftp from 118.186.36.50"
+52736,111,10.230252,"Jan  7 10:29:45 LabSZ sshd[28225]: input_userauth_request: invalid user bocosftp [preauth]"
+52739,213,10.230252,"Jan  7 10:29:47 LabSZ sshd[28225]: Failed password for invalid user bocosftp from 118.186.36.50 port 34437 ssh2"
+52753,38,10.230252,"Jan  7 10:30:00 LabSZ sshd[28231]: Invalid user boss from 118.186.36.50"
+52754,113,10.230252,"Jan  7 10:30:00 LabSZ sshd[28231]: input_userauth_request: invalid user boss [preauth]"
+52757,215,10.230252,"Jan  7 10:30:02 LabSZ sshd[28231]: Failed password for invalid user boss from 118.186.36.50 port 39097 ssh2"
+52771,40,10.230252,"Jan  7 10:30:15 LabSZ sshd[28237]: Invalid user bssbill from 118.186.36.50"
+52772,115,10.230252,"Jan  7 10:30:15 LabSZ sshd[28237]: input_userauth_request: invalid user bssbill [preauth]"
+52775,217,10.230252,"Jan  7 10:30:18 LabSZ sshd[28237]: Failed password for invalid user bssbill from 118.186.36.50 port 48677 ssh2"
+52792,292,10.230252,"Jan  7 10:31:28 LabSZ sshd[28243]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=anantes-653-1-197-215.w109-211.abo.wanadoo.fr "
+52805,290,10.230252,"Jan  7 10:31:47 LabSZ sshd[28243]: PAM 5 more authentication failures; logname= uid=0 euid=0 tty=ssh ruser= rhost=anantes-653-1-197-215.w109-211.abo.wanadoo.fr "
+52807,303,10.230252,"Jan  7 10:40:48 LabSZ sshd[28259]: reverse mapping checking getaddrinfo for 146.114.186.200.sta.impsat.net.br [200.186.114.146] failed - POSSIBLE BREAK-IN ATTEMPT!"
+52981,185,10.230252,"Jan  7 11:47:30 LabSZ sshd[28465]: error: Received disconnect from 111.222.107.90: 13: Authentication cancelled by user. [preauth]"
+53196,219,10.230252,"Jan  7 12:08:43 LabSZ sshd[28700]: Failed password for invalid user ubnt from 178.62.255.65 port 37624 ssh2"
+53226,42,10.230252,"Jan  7 12:09:08 LabSZ sshd[28728]: Invalid user bill from 178.62.255.65"
+53227,117,10.230252,"Jan  7 12:09:08 LabSZ sshd[28728]: input_userauth_request: invalid user bill [preauth]"
+53233,220,10.230252,"Jan  7 12:09:11 LabSZ sshd[28728]: Failed password for invalid user bill from 178.62.255.65 port 40442 ssh2"
+53726,44,10.230252,"Jan  7 12:23:58 LabSZ sshd[28937]: Invalid user letvuser from 116.12.136.3"
+53727,119,10.230252,"Jan  7 12:23:58 LabSZ sshd[28937]: input_userauth_request: invalid user letvuser [preauth]"
+53730,222,10.230252,"Jan  7 12:24:01 LabSZ sshd[28937]: Failed password for invalid user letvuser from 116.12.136.3 port 39672 ssh2"
+53745,184,10.230252,"Jan  7 12:48:21 LabSZ sshd[28960]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=m90-139-80-6.cust.tele2.lv  user=root"
+53749,182,10.230252,"Jan  7 12:48:40 LabSZ sshd[28960]: PAM 5 more authentication failures; logname= uid=0 euid=0 tty=ssh ruser= rhost=m90-139-80-6.cust.tele2.lv  user=root"
+53770,275,10.230252,"Jan  7 12:56:37 LabSZ sshd[29167]: Disconnecting: Too many authentication failures for support [preauth]"
+53877,2,10.230252,"Jan  7 13:26:10 LabSZ sshd[29363]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=host-544.wireless.cinte.com.br "
+53889,276,10.230252,"Jan  7 13:26:31 LabSZ sshd[29363]: Disconnecting: Too many authentication failures for service [preauth]"
+53890,4,10.230252,"Jan  7 13:26:31 LabSZ sshd[29363]: PAM 5 more authentication failures; logname= uid=0 euid=0 tty=ssh ruser= rhost=host-544.wireless.cinte.com.br "
+54089,9,10.230252,"Jan  7 13:39:48 LabSZ sshd[29512]: reverse mapping checking getaddrinfo for 212-129-46-171.rev.poneytelecom.eu [212.129.46.171] failed - POSSIBLE BREAK-IN ATTEMPT!"
+54392,48,10.230252,"Jan  7 14:43:14 LabSZ sshd[29708]: Invalid user glassfish from 180.66.11.80"
+54393,123,10.230252,"Jan  7 14:43:14 LabSZ sshd[29708]: input_userauth_request: invalid user glassfish [preauth]"
+54396,226,10.230252,"Jan  7 14:43:15 LabSZ sshd[29708]: Failed password for invalid user glassfish from 180.66.11.80 port 57988 ssh2"
+54569,53,10.230252,"Jan  7 14:45:46 LabSZ sshd[29780]: Invalid user users from 180.66.11.80"
+54570,128,10.230252,"Jan  7 14:45:46 LabSZ sshd[29780]: input_userauth_request: invalid user users [preauth]"
+54573,231,10.230252,"Jan  7 14:45:49 LabSZ sshd[29780]: Failed password for invalid user users from 180.66.11.80 port 51463 ssh2"
+54575,170,10.230252,"Jan  7 14:45:50 LabSZ sshd[29782]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=180.66.11.80  user=mail"
+54576,282,10.230252,"Jan  7 14:45:52 LabSZ sshd[29782]: Failed password for mail from 180.66.11.80 port 52063 ssh2"
+54578,54,10.230252,"Jan  7 14:45:56 LabSZ sshd[29784]: Invalid user www from 180.66.11.80"
+54579,129,10.230252,"Jan  7 14:45:56 LabSZ sshd[29784]: input_userauth_request: invalid user www [preauth]"
+54582,232,10.230252,"Jan  7 14:45:58 LabSZ sshd[29784]: Failed password for invalid user www from 180.66.11.80 port 52669 ssh2"
+54584,55,10.230252,"Jan  7 14:45:59 LabSZ sshd[29786]: Invalid user http from 180.66.11.80"
+54585,130,10.230252,"Jan  7 14:45:59 LabSZ sshd[29786]: input_userauth_request: invalid user http [preauth]"
+54588,233,10.230252,"Jan  7 14:46:01 LabSZ sshd[29786]: Failed password for invalid user http from 180.66.11.80 port 53280 ssh2"
+54590,56,10.230252,"Jan  7 14:46:03 LabSZ sshd[29788]: Invalid user apache from 180.66.11.80"
+54591,131,10.230252,"Jan  7 14:46:03 LabSZ sshd[29788]: input_userauth_request: invalid user apache [preauth]"
+54594,234,10.230252,"Jan  7 14:46:05 LabSZ sshd[29788]: Failed password for invalid user apache from 180.66.11.80 port 53889 ssh2"
+54674,57,10.230252,"Jan  7 14:47:37 LabSZ sshd[29832]: Invalid user test1 from 180.66.11.80"
+54675,132,10.230252,"Jan  7 14:47:37 LabSZ sshd[29832]: input_userauth_request: invalid user test1 [preauth]"
+54678,235,10.230252,"Jan  7 14:47:39 LabSZ sshd[29832]: Failed password for invalid user test1 from 180.66.11.80 port 38917 ssh2"
+54680,58,10.230252,"Jan  7 14:47:41 LabSZ sshd[29834]: Invalid user test2 from 180.66.11.80"
+54681,133,10.230252,"Jan  7 14:47:41 LabSZ sshd[29834]: input_userauth_request: invalid user test2 [preauth]"
+54684,236,10.230252,"Jan  7 14:47:44 LabSZ sshd[29834]: Failed password for invalid user test2 from 180.66.11.80 port 39522 ssh2"
+54686,59,10.230252,"Jan  7 14:47:45 LabSZ sshd[29836]: Invalid user test5 from 180.66.11.80"
+54687,134,10.230252,"Jan  7 14:47:45 LabSZ sshd[29836]: input_userauth_request: invalid user test5 [preauth]"
+54690,237,10.230252,"Jan  7 14:47:47 LabSZ sshd[29836]: Failed password for invalid user test5 from 180.66.11.80 port 40146 ssh2"
+54692,60,10.230252,"Jan  7 14:47:50 LabSZ sshd[29838]: Invalid user test6 from 180.66.11.80"
+54693,135,10.230252,"Jan  7 14:47:50 LabSZ sshd[29838]: input_userauth_request: invalid user test6 [preauth]"
+54696,238,10.230252,"Jan  7 14:47:52 LabSZ sshd[29838]: Failed password for invalid user test6 from 180.66.11.80 port 40748 ssh2"
+54698,61,10.230252,"Jan  7 14:47:55 LabSZ sshd[29840]: Invalid user test7 from 180.66.11.80"
+54699,136,10.230252,"Jan  7 14:47:55 LabSZ sshd[29840]: input_userauth_request: invalid user test7 [preauth]"
+54702,239,10.230252,"Jan  7 14:47:57 LabSZ sshd[29840]: Failed password for invalid user test7 from 180.66.11.80 port 41358 ssh2"
+54704,62,10.230252,"Jan  7 14:47:58 LabSZ sshd[29842]: Invalid user test8 from 180.66.11.80"
+54705,137,10.230252,"Jan  7 14:47:58 LabSZ sshd[29842]: input_userauth_request: invalid user test8 [preauth]"
+54708,240,10.230252,"Jan  7 14:48:00 LabSZ sshd[29842]: Failed password for invalid user test8 from 180.66.11.80 port 41955 ssh2"
+54710,63,10.230252,"Jan  7 14:48:03 LabSZ sshd[29844]: Invalid user test9 from 180.66.11.80"
+54711,138,10.230252,"Jan  7 14:48:03 LabSZ sshd[29844]: input_userauth_request: invalid user test9 [preauth]"
+54714,241,10.230252,"Jan  7 14:48:05 LabSZ sshd[29844]: Failed password for invalid user test9 from 180.66.11.80 port 42565 ssh2"
+54716,64,10.230252,"Jan  7 14:48:07 LabSZ sshd[29846]: Invalid user test4 from 180.66.11.80"
+54717,139,10.230252,"Jan  7 14:48:07 LabSZ sshd[29846]: input_userauth_request: invalid user test4 [preauth]"
+54720,242,10.230252,"Jan  7 14:48:09 LabSZ sshd[29846]: Failed password for invalid user test4 from 180.66.11.80 port 43148 ssh2"
+54722,65,10.230252,"Jan  7 14:48:11 LabSZ sshd[29848]: Invalid user test3 from 180.66.11.80"
+54723,140,10.230252,"Jan  7 14:48:11 LabSZ sshd[29848]: input_userauth_request: invalid user test3 [preauth]"
+54726,243,10.230252,"Jan  7 14:48:13 LabSZ sshd[29848]: Failed password for invalid user test3 from 180.66.11.80 port 43746 ssh2"
+54728,66,10.230252,"Jan  7 14:48:15 LabSZ sshd[29850]: Invalid user concat from 180.66.11.80"
+54729,141,10.230252,"Jan  7 14:48:15 LabSZ sshd[29850]: input_userauth_request: invalid user concat [preauth]"
+54732,244,10.230252,"Jan  7 14:48:18 LabSZ sshd[29850]: Failed password for invalid user concat from 180.66.11.80 port 44341 ssh2"
+54740,67,10.230252,"Jan  7 14:48:28 LabSZ sshd[29856]: Invalid user administrator from 180.66.11.80"
+54741,142,10.230252,"Jan  7 14:48:28 LabSZ sshd[29856]: input_userauth_request: invalid user administrator [preauth]"
+54744,245,10.230252,"Jan  7 14:48:30 LabSZ sshd[29856]: Failed password for invalid user administrator from 180.66.11.80 port 46132 ssh2"
+54746,68,10.230252,"Jan  7 14:48:32 LabSZ sshd[29858]: Invalid user host from 180.66.11.80"
+54747,143,10.230252,"Jan  7 14:48:32 LabSZ sshd[29858]: input_userauth_request: invalid user host [preauth]"
+54750,246,10.230252,"Jan  7 14:48:34 LabSZ sshd[29858]: Failed password for invalid user host from 180.66.11.80 port 46728 ssh2"
+54803,171,10.230252,"Jan  7 14:49:27 LabSZ sshd[29884]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=180.66.11.80  user=mysql"
+54804,283,10.230252,"Jan  7 14:49:29 LabSZ sshd[29884]: Failed password for mysql from 180.66.11.80 port 54584 ssh2"
+54821,172,10.230252,"Jan  7 14:49:44 LabSZ sshd[29892]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=180.66.11.80  user=backup"
+54822,284,10.230252,"Jan  7 14:49:46 LabSZ sshd[29892]: Failed password for backup from 180.66.11.80 port 56991 ssh2"
+54851,72,10.230252,"Jan  7 14:50:14 LabSZ sshd[29906]: Invalid user info from 180.66.11.80"
+54852,147,10.230252,"Jan  7 14:50:14 LabSZ sshd[29906]: input_userauth_request: invalid user info [preauth]"
+54855,250,10.230252,"Jan  7 14:50:16 LabSZ sshd[29906]: Failed password for invalid user info from 180.66.11.80 port 33005 ssh2"
+54875,74,10.230252,"Jan  7 14:50:31 LabSZ sshd[29914]: Invalid user data from 180.66.11.80"
+54876,149,10.230252,"Jan  7 14:50:31 LabSZ sshd[29914]: input_userauth_request: invalid user data [preauth]"
+54879,252,10.230252,"Jan  7 14:50:33 LabSZ sshd[29914]: Failed password for invalid user data from 180.66.11.80 port 35423 ssh2"
+54881,75,10.230252,"Jan  7 14:50:35 LabSZ sshd[29916]: Invalid user shop from 180.66.11.80"
+54882,150,10.230252,"Jan  7 14:50:35 LabSZ sshd[29916]: input_userauth_request: invalid user shop [preauth]"
+54885,253,10.230252,"Jan  7 14:50:37 LabSZ sshd[29916]: Failed password for invalid user shop from 180.66.11.80 port 36038 ssh2"
+54887,76,10.230252,"Jan  7 14:50:39 LabSZ sshd[29918]: Invalid user client from 180.66.11.80"
+54888,151,10.230252,"Jan  7 14:50:39 LabSZ sshd[29918]: input_userauth_request: invalid user client [preauth]"
+54891,254,10.230252,"Jan  7 14:50:41 LabSZ sshd[29918]: Failed password for invalid user client from 180.66.11.80 port 36618 ssh2"
+54899,77,10.230252,"Jan  7 14:50:48 LabSZ sshd[29922]: Invalid user fedora from 180.66.11.80"
+54900,152,10.230252,"Jan  7 14:50:48 LabSZ sshd[29922]: input_userauth_request: invalid user fedora [preauth]"
+54903,255,10.230252,"Jan  7 14:50:50 LabSZ sshd[29922]: Failed password for invalid user fedora from 180.66.11.80 port 37809 ssh2"
+54905,78,10.230252,"Jan  7 14:50:52 LabSZ sshd[29924]: Invalid user vnc from 180.66.11.80"
+54906,153,10.230252,"Jan  7 14:50:52 LabSZ sshd[29924]: input_userauth_request: invalid user vnc [preauth]"
+54909,256,10.230252,"Jan  7 14:50:54 LabSZ sshd[29924]: Failed password for invalid user vnc from 180.66.11.80 port 38393 ssh2"
+54911,79,10.230252,"Jan  7 14:50:56 LabSZ sshd[29926]: Invalid user pil from 180.66.11.80"
+54912,154,10.230252,"Jan  7 14:50:56 LabSZ sshd[29926]: input_userauth_request: invalid user pil [preauth]"
+54915,257,10.230252,"Jan  7 14:50:58 LabSZ sshd[29926]: Failed password for invalid user pil from 180.66.11.80 port 39001 ssh2"
+54917,80,10.230252,"Jan  7 14:51:01 LabSZ sshd[29928]: Invalid user nvp from 180.66.11.80"
+54918,155,10.230252,"Jan  7 14:51:01 LabSZ sshd[29928]: input_userauth_request: invalid user nvp [preauth]"
+54921,258,10.230252,"Jan  7 14:51:03 LabSZ sshd[29928]: Failed password for invalid user nvp from 180.66.11.80 port 39604 ssh2"
+54923,81,10.230252,"Jan  7 14:51:05 LabSZ sshd[29930]: Invalid user solaris from 180.66.11.80"
+54924,156,10.230252,"Jan  7 14:51:05 LabSZ sshd[29930]: input_userauth_request: invalid user solaris [preauth]"
+54927,259,10.230252,"Jan  7 14:51:07 LabSZ sshd[29930]: Failed password for invalid user solaris from 180.66.11.80 port 40201 ssh2"
+54935,82,10.230252,"Jan  7 14:51:13 LabSZ sshd[29934]: Invalid user shoutcast from 180.66.11.80"
+54936,157,10.230252,"Jan  7 14:51:13 LabSZ sshd[29934]: input_userauth_request: invalid user shoutcast [preauth]"
+54939,260,10.230252,"Jan  7 14:51:15 LabSZ sshd[29934]: Failed password for invalid user shoutcast from 180.66.11.80 port 41389 ssh2"
+54941,83,10.230252,"Jan  7 14:51:18 LabSZ sshd[29936]: Invalid user public from 180.66.11.80"
+54942,158,10.230252,"Jan  7 14:51:18 LabSZ sshd[29936]: input_userauth_request: invalid user public [preauth]"
+54945,261,10.230252,"Jan  7 14:51:20 LabSZ sshd[29936]: Failed password for invalid user public from 180.66.11.80 port 42014 ssh2"
+54947,84,10.230252,"Jan  7 14:51:22 LabSZ sshd[29938]: Invalid user demo from 180.66.11.80"
+54948,159,10.230252,"Jan  7 14:51:22 LabSZ sshd[29938]: input_userauth_request: invalid user demo [preauth]"
+54951,262,10.230252,"Jan  7 14:51:24 LabSZ sshd[29938]: Failed password for invalid user demo from 180.66.11.80 port 42614 ssh2"
+54953,85,10.230252,"Jan  7 14:51:26 LabSZ sshd[29940]: Invalid user media from 180.66.11.80"
+54954,160,10.230252,"Jan  7 14:51:26 LabSZ sshd[29940]: input_userauth_request: invalid user media [preauth]"
+54957,263,10.230252,"Jan  7 14:51:27 LabSZ sshd[29940]: Failed password for invalid user media from 180.66.11.80 port 43219 ssh2"
+54962,173,10.230252,"Jan  7 14:51:35 LabSZ sshd[29944]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=180.66.11.80  user=bin"
+54963,285,10.230252,"Jan  7 14:51:37 LabSZ sshd[29944]: Failed password for bin from 180.66.11.80 port 44414 ssh2"
+54981,6,10.230252,"Jan  7 15:26:49 LabSZ sshd[29969]: Address 117.7.106.47 maps to localhost, but this does not map back to the address - POSSIBLE BREAK-IN ATTEMPT!"
