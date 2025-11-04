@@ -5,7 +5,7 @@ on:
     paths:
       - 'input/**/*.txt'
       - 'input/*.txt'
-  workflow_dispatch: {}     # Cho phép bấm nút Run workflow
+  workflow_dispatch: {}   # Cho phép bấm nút Run workflow
 
 jobs:
   build-and-run:
@@ -14,19 +14,63 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      # --- Debug: xem repo CI đang có gì ---
+      - name: Debug tree
+        run: |
+          echo "== PWD ==" && pwd
+          echo "== FILES (<=3 levels) ==" && find . -maxdepth 3 -type f | sed 's|^./||' | sort || true
+          echo "== INPUT TXT ==" && find ./input -maxdepth 1 -type f -name '*.txt' | sed 's|^./||' | sort || true
+
       - name: Install g++
         run: sudo apt-get update && sudo apt-get install -y g++
 
+      # --- Build: tự dò nguồn, hỗ trợ cả root và src/ ---
       - name: Build
+        shell: bash
         run: |
+          set -e
           mkdir -p build
-          g++ -std=c++17 -O2 -I. -o build/trie_ad main_trie_anomaly_detection.cpp
 
+          # Chọn source chính
+          SRC=""
+          if [ -f main_trie_anomaly_detection.cpp ]; then
+            SRC="main_trie_anomaly_detection.cpp"
+          elif [ -f main.cpp ]; then
+            SRC="main.cpp"
+          elif ls src/*.cpp >/dev/null 2>&1; then
+            SRC="src/*.cpp"
+          fi
+
+          if [ -z "$SRC" ]; then
+            echo "::error ::No source file found (expected main_trie_anomaly_detection.cpp or main.cpp or src/*.cpp)"
+            exit 1
+          fi
+          echo "Compiling: $SRC"
+
+          # Thử biên dịch với gnu++17
+          set +e
+          g++ -std=gnu++17 -O2 -I. -Isrc -o build/trie_ad $SRC
+          ST=$?
+          if [ $ST -ne 0 ]; then
+            echo "Retry compile with -lstdc++fs (older libstdc++ needing filesystem link)"
+            g++ -std=gnu++17 -O2 -I. -Isrc -o build/trie_ad $SRC -lstdc++fs
+            ST=$?
+          fi
+          set -e
+          if [ $ST -ne 0 ]; then
+            echo "::error ::Compile failed."
+            exit 1
+          fi
+
+          ls -lh build/trie_ad
+
+      # --- Run: chương trình tự quét ./input ---
       - name: Run (scan ./input)
         run: |
           mkdir -p output
           ./build/trie_ad
 
+      # --- Upload CSV kết quả ---
       - name: Upload results
         uses: actions/upload-artifact@v4
         with:
