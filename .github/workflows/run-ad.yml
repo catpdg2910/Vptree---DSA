@@ -20,7 +20,7 @@ jobs:
       - name: Build
         run: |
           mkdir -p build
-          g++ -std=c++17 -O2 -I. -o build/trie_ad main.cpp
+          g++ -std=c++17 -O2 -I. -o build/trie_ad main_trie_anomaly_detection.cpp
 
       - name: Run (scan ./input)
         run: |
