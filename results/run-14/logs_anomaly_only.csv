@@ -1,7 +1,0 @@
-log_id,template_id,score,raw_log
-15290,22,11.918541,"Dec 13 17:01:39 LabSZ sshd[6135]: error: Received disconnect from 195.154.37.122: 3: java.net.SocketTimeoutException: Read timed out [preauth]"
-68002,8,11.918541,"Dec 16 23:45:43 LabSZ sshd[9185]: Corrupted MAC on input. [preauth]"
-99767,2,11.918541,"Dec 17 09:23:29 LabSZ sshd[30478]: error: Received disconnect from 212.83.176.1: 3: org.vngx.jsch.userauth.AuthCancelException: User authentication canceled by user [preauth]"
-115853,7,11.918541,"Dec 18 15:05:51 LabSZ sshd[8043]: reverse mapping checking getaddrinfo for 186-224-163-77.metroethernet.dynamic.fst.sp.faster.net.br [186.224.163.77] failed - POSSIBLE BREAK-IN ATTEMPT!"
-247493,3,11.918541,"Jan  2 00:38:15 LabSZ sshd[18843]: reverse mapping checking getaddrinfo for ip54502346.adsl-surfen.hetnet.nl [84.80.35.70] failed - POSSIBLE BREAK-IN ATTEMPT!"
-296693,25,11.918541,"Jan  2 11:20:21 LabSZ sshd[3379]: Accepted password for suyuxin from 183.62.156.108 port 24291 ssh2"
