@@ -111,7 +111,7 @@ int main() {
     {
         ofstream fo(unified_tpl);
         if (!fo.is_open()) { cerr << "[ERROR] Cannot create " << unified_tpl << "\n"; delete root; return 1; }
-        fo << "threshold," << std::fixed << std::setprecision(9) << threshold << "\n";
+        fo << "threshold," << std::fixed << std::setprecision(9) << threshold << ",N/A,N/A,N/A" << "\n";;
         fo << "tid,count,score,anomaly_win,template\n";
         function<void(const TrieNode*)> dfs_write = [&](const TrieNode* node) {
             if (!node) return;
@@ -196,4 +196,5 @@ int main() {
     cout << "[FINISHED]\n";
     return 0;
 }
+
 
