@@ -5,16 +5,19 @@ on:
     paths:
       - 'input/**/*.txt'
       - 'input/*.txt'
-  workflow_dispatch: {}   # Cho phép bấm nút Run workflow
+  workflow_dispatch: {}
 
 jobs:
   build-and-run:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write     # cho phép commit kết quả vào repo
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      # --- Debug: xem repo CI đang có gì ---
+      # Debug nhanh cấu trúc repo & input
       - name: Debug tree
         run: |
           echo "== PWD ==" && pwd
@@ -24,14 +27,13 @@ jobs:
       - name: Install g++
         run: sudo apt-get update && sudo apt-get install -y g++
 
-      # --- Build: tự dò nguồn, hỗ trợ cả root và src/ ---
+      # Build: tự dò nguồn (ưu tiên main_trie_anomaly_detection.cpp)
       - name: Build
         shell: bash
         run: |
           set -e
           mkdir -p build
 
-          # Chọn source chính
           SRC=""
           if [ -f main_trie_anomaly_detection.cpp ]; then
             SRC="main_trie_anomaly_detection.cpp"
@@ -45,14 +47,13 @@ jobs:
             echo "::error ::No source file found (expected main_trie_anomaly_detection.cpp or main.cpp or src/*.cpp)"
             exit 1
           fi
-          echo "Compiling: $SRC"
 
-          # Thử biên dịch với gnu++17
+          echo "Compiling: $SRC"
           set +e
           g++ -std=gnu++17 -O2 -I. -Isrc -o build/trie_ad $SRC
           ST=$?
           if [ $ST -ne 0 ]; then
-            echo "Retry compile with -lstdc++fs (older libstdc++ needing filesystem link)"
+            echo "Retry with -lstdc++fs"
             g++ -std=gnu++17 -O2 -I. -Isrc -o build/trie_ad $SRC -lstdc++fs
             ST=$?
           fi
@@ -61,17 +62,33 @@ jobs:
             echo "::error ::Compile failed."
             exit 1
           fi
-
           ls -lh build/trie_ad
 
-      # --- Run: chương trình tự quét ./input ---
+      # Run: thêm stdbuf để log stream ngay trên Actions
       - name: Run (scan ./input)
         run: |
           mkdir -p output
-          ./build/trie_ad
+          stdbuf -oL -eL ./build/trie_ad
 
-      # --- Upload CSV kết quả ---
-      - name: Upload results
+      # Preview CSV ngay trong trang Actions (Job Summary)
+      - name: Show CSV previews in job summary
+        if: always()
+        run: |
+          {
+            echo "## Outputs preview"
+            for f in output/*.csv; do
+              [ -f "$f" ] || continue
+              echo ""
+              echo "### $(basename "$f")"
+              echo ""
+              echo '```csv'
+              head -n 50 "$f"
+              echo '```'
+            done
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      # Upload artifact để tải trọn bộ kết quả
+      - name: Upload results (Artifacts)
         uses: actions/upload-artifact@v4
         with:
           name: outputs-${{ github.run_number }}
@@ -80,3 +97,21 @@ jobs:
             output/log_anomaly_mapping.csv
             output/logs_anomaly_only.csv
           if-no-files-found: warn
+
+      # Commit kết quả vào repo để xem trực tiếp trên GitHub
+      - name: Commit results back to repo
+        if: always()
+        run: |
+          set -e
+          RUN_DIR="results/run-${{ github.run_number }}"
+          mkdir -p "$RUN_DIR"
+          if ls output/*.csv >/dev/null 2>&1; then
+            cp -f output/*.csv "$RUN_DIR"/
+            git config user.name  "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add "$RUN_DIR"
+            git commit -m "Results for run #${{ github.run_number }} [skip ci]" || echo "Nothing to commit"
+            git push
+          else
+            echo "No CSVs to commit."
+          fi
