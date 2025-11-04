@@ -1,39 +1,69 @@
-name: Run Trie Anomaly Detection
+name: Run Trie Anomaly Detection (manual)
 
 on:
-  push:
-    paths:
-      - 'input/**/*.txt'
-      - 'input/*.txt'
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs:
+      urls:
+        description: "Tùy chọn: nhập các URL .txt (mỗi dòng 1 URL) để tải về input/ trước khi chạy"
+        required: false
+        type: string
+      clear_input:
+        description: "Xóa input/*.txt hiện có trước khi chạy?"
+        required: false
+        type: boolean
+        default: false
 
 jobs:
   build-and-run:
     runs-on: ubuntu-latest
     permissions:
-      contents: write     # cho phép commit kết quả vào repo
+      contents: write
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      # Debug nhanh cấu trúc repo & input
       - name: Debug tree
         run: |
           echo "== PWD ==" && pwd
           echo "== FILES (<=3 levels) ==" && find . -maxdepth 3 -type f | sed 's|^./||' | sort || true
-          echo "== INPUT TXT ==" && find ./input -maxdepth 1 -type f -name '*.txt' | sed 's|^./||' | sort || true
+          echo "== INPUT TXT (trước khi chuẩn bị) ==" && find ./input -maxdepth 1 -type f -name '*.txt' | sed 's|^./||' | sort || true
+
+      # Chuẩn bị input theo yêu cầu người dùng (không cần commit)
+      - name: Prepare input (clear & download URLs if provided)
+        shell: bash
+        run: |
+          set -e
+          mkdir -p input
+          if [ "${{ github.event.inputs.clear_input }}" = "true" ]; then
+            echo "Clear input/*.txt"
+            find input -maxdepth 1 -type f -name '*.txt' -print -delete || true
+          fi
+          if [ -n "${{ github.event.inputs.urls }}" ]; then
+            echo "Downloading URLs into ./input ..."
+            i=1
+            # Mỗi dòng 1 URL
+            while IFS= read -r u; do
+              [ -z "$u" ] && continue
+              fn=$(printf "remote_%03d.txt" "$i")
+              echo " -> $u  => input/$fn"
+              curl -L --fail --retry 3 --connect-timeout 20 "$u" -o "input/$fn"
+              i=$((i+1))
+            done << 'EOF_URLS'
+${{ github.event.inputs.urls }}
+EOF_URLS
+          fi
+          echo "== INPUT TXT (sau chuẩn bị) =="
+          find ./input -maxdepth 1 -type f -name '*.txt' | sed 's|^./||' | sort || true
 
       - name: Install g++
-        run: sudo apt-get update && sudo apt-get install -y g++
+        run: sudo apt-get update && sudo apt-get install -y g++ curl
 
-      # Build: tự dò nguồn (ưu tiên main_trie_anomaly_detection.cpp)
       - name: Build
         shell: bash
         run: |
           set -e
           mkdir -p build
-
           SRC=""
           if [ -f main_trie_anomaly_detection.cpp ]; then
             SRC="main_trie_anomaly_detection.cpp"
@@ -42,12 +72,10 @@ jobs:
           elif ls src/*.cpp >/dev/null 2>&1; then
             SRC="src/*.cpp"
           fi
-
           if [ -z "$SRC" ]; then
-            echo "::error ::No source file found (expected main_trie_anomaly_detection.cpp or main.cpp or src/*.cpp)"
+            echo "::error ::No source found (main_trie_anomaly_detection.cpp or main.cpp or src/*.cpp)."
             exit 1
           fi
-
           echo "Compiling: $SRC"
           set +e
           g++ -std=gnu++17 -O2 -I. -Isrc -o build/trie_ad $SRC
@@ -58,19 +86,14 @@ jobs:
             ST=$?
           fi
           set -e
-          if [ $ST -ne 0 ]; then
-            echo "::error ::Compile failed."
-            exit 1
-          fi
+          [ $ST -eq 0 ] || (echo "::error ::Compile failed" && exit 1)
           ls -lh build/trie_ad
 
-      # Run: thêm stdbuf để log stream ngay trên Actions
       - name: Run (scan ./input)
         run: |
           mkdir -p output
           stdbuf -oL -eL ./build/trie_ad
 
-      # Preview CSV ngay trong trang Actions (Job Summary)
       - name: Show CSV previews in job summary
         if: always()
         run: |
@@ -87,7 +110,6 @@ jobs:
             done
           } >> "$GITHUB_STEP_SUMMARY"
 
-      # Upload artifact để tải trọn bộ kết quả
       - name: Upload results (Artifacts)
         uses: actions/upload-artifact@v4
         with:
@@ -98,7 +120,6 @@ jobs:
             output/logs_anomaly_only.csv
           if-no-files-found: warn
 
-      # Commit kết quả vào repo để xem trực tiếp trên GitHub
       - name: Commit results back to repo
         if: always()
         run: |
