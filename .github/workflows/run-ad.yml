@@ -1,0 +1,38 @@
+name: Run Trie Anomaly Detection
+
+on:
+  push:
+    paths:
+      - 'input/**/*.txt'
+      - 'input/*.txt'
+  workflow_dispatch: {}     # Cho phép bấm nút Run workflow
+
+jobs:
+  build-and-run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install g++
+        run: sudo apt-get update && sudo apt-get install -y g++
+
+      - name: Build
+        run: |
+          mkdir -p build
+          g++ -std=c++17 -O2 -I. -o build/trie_ad main.cpp
+
+      - name: Run (scan ./input)
+        run: |
+          mkdir -p output
+          ./build/trie_ad
+
+      - name: Upload results
+        uses: actions/upload-artifact@v4
+        with:
+          name: outputs-${{ github.run_number }}
+          path: |
+            output/templates.csv
+            output/log_anomaly_mapping.csv
+            output/logs_anomaly_only.csv
+          if-no-files-found: warn
