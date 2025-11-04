@@ -1,5 +1,0 @@
-log_id,template_id,score,raw_log
-11576,10,10.820148,"Dec 10 12:38:16 LabSZ sshd[31726]: reverse mapping checking getaddrinfo for hn.kd.ny.adsl [219.156.124.234] failed - POSSIBLE BREAK-IN ATTEMPT!"
-39569,34,10.820148,"Dec 11 00:55:49 LabSZ sshd[20225]: Bad packet length 1819045217. [preauth]"
-39570,29,10.820148,"Dec 11 00:55:49 LabSZ sshd[20225]: Disconnecting: Packet corrupt [preauth]"
-63970,37,10.820148,"Dec 12 00:53:17 LabSZ sshd[4296]: reverse mapping checking getaddrinfo for 224.247.186.60.broad.hz.zj.dynamic.163data.com.cn [60.186.247.224] failed - POSSIBLE BREAK-IN ATTEMPT!"
