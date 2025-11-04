@@ -1,7 +1,0 @@
-log_id,template_id,score,raw_log
-1,1,10.820028,"[2025-10-01 00:00:00] cause wtf is this shit? i cant handle this mf."
-94203,18,9.721416,"[2025-10-02 15:23:44] Information PrintService 808 Document Job-65 owned by svc_backup was printed on Brother-HL-L2350DW via smb. [Computer=LAB-WS01]"
-94645,18,9.721416,"[2025-10-02 15:34:48] Error PrintService 372 Document Job-428 owned by svc_backup was printed on Brother-HL-L2350DW via ldap. [Computer=LAB-WS01]"
-96115,18,9.721416,"[2025-10-02 16:11:01] Information PrintService 808 Document Job-472 owned by svc_backup was printed on Brother-HL-L2350DW via rdp. [Computer=LAB-WS01]"
-98241,18,9.721416,"[2025-10-02 17:05:04] Information PrintService 808 Document Job-2 owned by svc_deploy was printed on Brother-HL-L2350DW via http. [Computer=LAB-WS01]"
-98748,18,9.721416,"[2025-10-02 17:18:02] Information PrintService 372 Document Job-480 owned by SYSTEM was printed on Brother-HL-L2350DW via http. [Computer=LAB-WS01]"
